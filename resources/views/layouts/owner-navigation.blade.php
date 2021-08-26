@@ -5,10 +5,12 @@
 			<div class="flex">
 				<!-- Logo -->
 				<div class="flex-shrink-0 flex items-center">
+                    <div class="w-60">
 					<a href="{{ route('owner.dashboard') }}">
 						<x-application-logo
 							class="block h-10 w-auto fill-current text-gray-600" />
 					</a>
+				</div>
 				</div>
 
 				<!-- Navigation Links -->
@@ -16,6 +18,10 @@
 					<x-nav-link :href="route('owner.dashboard')"
 						:active="request()->routeIs('owner.dashboard')">
 						{{ __('Dashboard') }}
+					</x-nav-link>
+					<x-nav-link :href="route('owner.shops.index')"
+						:active="request()->routeIs('owner.shops.index')">
+						店舗情報
 					</x-nav-link>
 				</div>
 			</div>
@@ -77,6 +83,9 @@
 		<div class="pt-2 pb-3 space-y-1">
 			<x-responsive-nav-link :href="route('owner.dashboard')" :active="request()->routeIs('owner.dashboard')">
 				{{ __('Dashboard') }}
+			</x-responsive-nav-link>
+			<x-responsive-nav-link :href="route('owner.shops.index')" :active="request()->routeIs('owner.shops.index')">
+                店舗情報
 			</x-responsive-nav-link>
 		</div>
 
