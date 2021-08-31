@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Owner;
 
 use App\Http\Controllers\Controller;
-use App\Models\Shop;
 use Illuminate\Http\Request;
+use App\Models\Shop;
 use Illuminate\Support\Facades\Auth;
 
 class ShopController extends Controller
@@ -32,8 +32,8 @@ class ShopController extends Controller
 
     public function index()
     {
-        $ownerID = Auth::id();
-        $shops = Shop::where('owner_id', $ownerID)->get();
+        // $ownerID = Auth::id();
+        $shops = Shop::where('owner_id', Auth::id())->get();
 
         return view('owner.shops.index',
         compact('shops'));
